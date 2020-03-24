@@ -15,7 +15,7 @@ sll_node* sll_new_node(int data)  {
 void sll_print(sll_node* head)  { 
  sll_node* p = head;
  while(p!=NULL)  {
-  printf("%d  ",p->data);
+  printf("%d ",p->data);
   p = p->next;
   }
   printf("\n");
@@ -134,10 +134,13 @@ int sll_push_at_position(sll_node** head,sll_node** tail,int p,int n){
 int sll_pop_at_position(sll_node** head,sll_node** tail,int p){
 	sll_node* temp=*head;
 	int count=1;
+	if(p==1)
+		sll_pop_at_start(head,tail);
+	else{
 	while(count!=p-1){
 		temp=temp->next;
 		count++;
-	}
+	}}
 	temp->next=temp->next->next;
 	return p;
 	

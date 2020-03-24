@@ -3,12 +3,21 @@
 #include "dsa.c"
 
 int main()	{
-	int n = 4;
+	int n = 6;
 	graph_list* g = graph_create(n);
-	graph_add_edge(g,0,1,3);
+	graph_add_edge(g,0,1,2);
 	graph_add_edge(g,0,2,4);
+	graph_add_edge(g,1,3,7);
 	graph_add_edge(g,1,2,1);
-	graph_add_edge(g,2,3,1);
+	graph_add_edge(g,2,4,3);
+	graph_add_edge(g,3,5,1);
+	graph_add_edge(g,4,5,5);
+	graph_add_edge(g,4,3,2);
+	/*
+	graph_add_edge(g,0,1,2);
+	graph_add_edge(g,0,2,4);
+	graph_add_edge(g,1,3,1);
+	graph_add_edge(g,2,3,1);*/
 //	graph_add_edge(g,2,0,5);
 //	graph_add_edge(g,3,3,5);
 //	graph_add_edge(g,4,3);
@@ -19,7 +28,7 @@ int main()	{
 	graph_dfs(g,0,n);
 	printf("\nBFS\n");
 	graph_bfs(g,0,n);
-//	graph_dijkstra(g,1,n);
+	graph_dijkstra(g,0,n);
 }	
 
 
